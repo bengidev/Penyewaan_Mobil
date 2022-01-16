@@ -11,20 +11,20 @@
 
     <ImageView
         android:id="@+id/logo_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/icon_car_2"
-        android:transitionName="logo_car_transition"/>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:transitionName="logo_car_transition"
+        app:srcCompat="@drawable/icon_car_2" />
 
     <TextView
         android:id="@+id/logo_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="-20dp"
+        android:layout_marginTop="-30dp"
         android:fontFamily="@font/bungee"
         android:text="HELLO THERE, WELCOME BACK"
         android:textSize="40sp"
-        android:transitionName="logo_text_transition"/>
+        android:transitionName="logo_text_transition" />
 
     <TextView
         android:id="@+id/slogan_name"
@@ -33,7 +33,8 @@
         android:fontFamily="@font/antic"
         android:text="Sign In to continue"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:transitionName="sign_text_transition"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,16 +86,17 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/bungee"
-            android:text="GO" />
+            android:text="GO"
+            android:transitionName="login_button_transition"/>
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/signup_screen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
@@ -104,6 +106,7 @@
             android:fontFamily="@font/antic"
             android:text="NEW USER? SIGN UP"
             android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:transitionName="sign_button_transition"/>
     </LinearLayout>
 </LinearLayout>
