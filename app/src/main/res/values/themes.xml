@@ -27,6 +27,10 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_primaryInverse</item>
+        <item name="android:windowContentTransitions">true</item>
+    </style>
+
+    <style name="Theme.StatusbarCustomColor" parent="Theme.Material3.Light.NoActionBar">
         <item name="android:statusBarColor">@color/background_car</item>
     </style>
 </resources>

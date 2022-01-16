@@ -2,9 +2,13 @@ package io.github.syndicate017.penyewaanmobil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Pair;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -59,9 +63,20 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+
+                //This code is for animate/transition the logo and text
+                //The object View from the image/text
+                //The object String from the transitionName in the xml layout
+                Pair[] pairs = new Pair[2];
+                pairs[0] = new Pair<View, String>(logoCar, "logo_car_transition");
+                pairs[1] = new Pair<View, String>(logoText, "logo_text_transition");
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                startActivity(intent, options.toBundle());
+
+//                startActivity(intent);
+//                finish();
             }
         }, SPLASH_SCREEN_TIME);
     }

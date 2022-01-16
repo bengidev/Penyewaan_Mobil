@@ -54,4 +54,6 @@
     <color name="seed">#984716</color>
     <color name="error">#BA1B1B</color>
     <color name="background_car">#fece2f</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
 </resources>

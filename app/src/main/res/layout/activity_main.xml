@@ -17,7 +17,8 @@
         android:src="@drawable/icon_car_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:transitionName="logo_car_transition"/>
 
     <TextView
         android:id="@+id/logoText"
@@ -32,7 +33,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoCar" />
+        app:layout_constraintTop_toBottomOf="@+id/logoCar"
+        android:transitionName="logo_text_transition"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/logoAnimLottie"
@@ -59,5 +61,18 @@
         android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/press_start_2p"
+        android:text="Created by Bambang Tri Rahmat Doni"
+        android:textSize="10sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sloganText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,9 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PenyewaanMobil">
         <activity
-            android:name=".DashboardActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.StatusbarCustomColor"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
