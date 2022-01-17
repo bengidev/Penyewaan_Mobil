@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int SPLASH_SCREEN_TIME = 3600;
 
     ImageView logoCar;
-    TextView logoText, sloganText;
+    TextView logoText, sloganText, copyrightText;
     Animation topAnim, bottomAnim;
     LottieAnimationView logoAnimLottie;
 
@@ -43,12 +43,14 @@ public class MainActivity extends AppCompatActivity {
         logoCar = findViewById(R.id.logoCar);
         logoText = findViewById(R.id.logoText);
         sloganText = findViewById(R.id.sloganText);
+        copyrightText = findViewById(R.id.copyrightText);
         logoAnimLottie = findViewById(R.id.logoAnimLottie);
 
         //Apply the animations
         logoCar.setAnimation(topAnim);
         logoText.setAnimation(bottomAnim);
         sloganText.setAnimation(bottomAnim);
+        copyrightText.setAnimation(bottomAnim);
         logoAnimLottie.setAnimation(bottomAnim);
 
         //Animations from lottie
@@ -56,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         //For fix the animation from android version KitKat and Above
         logoAnimLottie.enableMergePathsForKitKatAndAbove(true);
-        logoAnimLottie.animate().translationX(-2000).setDuration(500).setStartDelay(3000);
+        logoAnimLottie.animate().translationX(-3000).setDuration(500).setStartDelay(3000);
 
         //For set the transition per pages
         //Using android.os Handler

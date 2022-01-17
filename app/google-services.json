@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588787119659",
+    "project_id": "penyewaan-mobil",
+    "storage_bucket": "penyewaan-mobil.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588787119659:android:f620c8a33c15df303fdc6e",
+        "android_client_info": {
+          "package_name": "io.github.syndicate017.penyewaanmobil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588787119659-dftgba53g7skdm1glaioisnd5gqa5cob.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZPwDoDzkEq6HDaXQQigda4Sf-_L5WB94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588787119659-dftgba53g7skdm1glaioisnd5gqa5cob.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
