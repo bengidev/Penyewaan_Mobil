@@ -40,6 +40,12 @@ public class SignUpActivity extends AppCompatActivity {
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Check the requirements
+                if (!validateFullName() | !validateUsername() | !validateEmail() | !validatePhoneNumber() | !validatePassword()) {
+                    return;
+                }
+
                 //Use the link on getInstance from FireBase Database
                 rootNode = FirebaseDatabase.getInstance("https://penyewaan-mobil-default-rtdb.asia-southeast1.firebasedatabase.app");
                 reference = rootNode.getReference("users");
@@ -53,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
 
-                reference.child(phoneNumber).setValue(helperClass);
+                reference.child(fullName).setValue(helperClass);
 //
 //                Toast toast = Toast.makeText(SignUpActivity.this, "Your data was successfully created!", Toast.LENGTH_LONG);
 //                toast.show();
@@ -63,4 +69,93 @@ public class SignUpActivity extends AppCompatActivity {
             }
         }); //Register Button method end
     } //onCreate method end
+
+    private Boolean validateFullName() {
+        String val = regFullName.getEditText().getText().toString();
+
+        if (val.isEmpty()) {
+            regFullName.setError("Field cannot be empty!");
+            return false;
+        } else {
+            regFullName.setError(null);
+            regFullName.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private Boolean validateUsername() {
+        String val = regUserName.getEditText().getText().toString();
+        String noWhiteSpace = "\\A\\w{4,20}\\z";
+//                "(?=\\S+$)";
+
+        if (val.isEmpty()) {
+            regUserName.setError("Field cannot be empty!");
+            return false;
+        } else if (val.length() >= 15) {
+            regUserName.setError("Username too long!");
+            return false;
+        } else if (!val.matches(noWhiteSpace)) {
+            regUserName.setError("White Spaces are not allowed!");
+            return false;
+        } else {
+            regUserName.setError(null);
+            regUserName.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private Boolean validateEmail() {
+        String val = regEmail.getEditText().getText().toString();
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+
+        if (val.isEmpty()) {
+            regEmail.setError("Field cannot be empty!");
+            return false;
+        } else if (!val.matches(emailPattern)) {
+            regEmail.setError("Invalid email address!");
+            return false;
+        } else {
+            regEmail.setError(null);
+            regEmail.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private Boolean validatePhoneNumber() {
+        String val = regPhoneNumber.getEditText().getText().toString();
+
+        if (val.isEmpty()) {
+            regPhoneNumber.setError("Field cannot be empty!");
+            return false;
+        } else {
+            regPhoneNumber.setError(null);
+            regPhoneNumber.setErrorEnabled(false);
+            return true;
+        }
+    }
+
+    private Boolean validatePassword() {
+        String val = regPassword.getEditText().getText().toString();
+        String passwordVal = "^" +
+                //"(?=.*[@#$%^&+=])" +    //at least 1 special character
+                "(?=.*[0-9])" +         //at least 1 digit
+                "(?=.*[a-z])" +         //at least 1 lower case letter
+                "(?=.*[A-Z])" +         //at least 1 upper case letter
+                "(?=.*[a-zA-Z])" +      //any letter
+                "(?=\\S+$)" +           //no white spaces
+                ".{4,}" +               //at least 4 characters
+                "$";
+
+        if (val.isEmpty()) {
+            regPassword.setError("Field cannot be empty!");
+            return false;
+        } else if (!val.matches(passwordVal)) {
+            regPassword.setError("Password is too weak!");
+            return false;
+        } else {
+            regPassword.setError(null);
+            regPassword.setErrorEnabled(false);
+            return true;
+        }
+    }
 }
