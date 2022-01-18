@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
         //For fix the animation from android version KitKat and Above
         logoAnimLottie.enableMergePathsForKitKatAndAbove(true);
-        logoAnimLottie.animate().translationX(-3000).setDuration(500).setStartDelay(3000);
+        logoAnimLottie.animate().translationX(-4000).setDuration(500).setStartDelay(3000);
 
         //For set the transition per pages
         //Using android.os Handler

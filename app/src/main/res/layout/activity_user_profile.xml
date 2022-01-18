@@ -18,15 +18,15 @@
             android:id="@+id/profile_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="30dp"
             app:srcCompat="@drawable/icon_profile" />
 
         <TextView
-            android:id="@+id/full_name"
+            android:id="@+id/fullNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
             android:layout_toRightOf="@id/profile_image"
             android:fontFamily="@font/bungee"
             android:includeFontPadding="false"
@@ -34,10 +34,10 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/full_name2"
+            android:id="@+id/userNameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/full_name"
+            android:layout_below="@id/fullNameLabel"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/profile_image"
             android:fontFamily="@font/antic"
@@ -46,107 +46,107 @@
             android:textSize="16sp" />
     </RelativeLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-100dp"
-            android:background="@color/white"
-            android:padding="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-120dp"
+        android:background="@color/white"
+        android:padding="20dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/background_car"
+            app:cardElevation="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/background_car"
-                app:cardElevation="20dp">
+                android:padding="10dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/payment1" />
 
-                    <ImageView
-                        android:id="@+id/imageView3"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/payment1" />
+                <TextView
+                    android:id="@+id/payment_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView3"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/bungee"
+                    android:includeFontPadding="false"
+                    android:text="$123"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/payment_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView3"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/bungee"
-                        android:includeFontPadding="false"
-                        android:text="$123"
-                        android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/payment_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/payment_label"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/antic"
+                    android:includeFontPadding="false"
+                    android:text="Balance"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-                    <TextView
-                        android:id="@+id/payment_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/payment_label"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/antic"
-                        android:includeFontPadding="false"
-                        android:text="Balance"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/background_car"
+            app:cardElevation="20dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="125dp"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardBackgroundColor="@color/background_car"
-                app:cardElevation="20dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp">
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/booking1" />
 
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/booking1" />
+                <TextView
+                    android:id="@+id/booking_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView4"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/bungee"
+                    android:includeFontPadding="false"
+                    android:text="1"
+                    android:textSize="20sp" />
 
-                    <TextView
-                        android:id="@+id/booking_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/imageView4"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/bungee"
-                        android:includeFontPadding="false"
-                        android:text="1"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/booking_description"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/booking_label"
-                        android:layout_centerHorizontal="true"
-                        android:fontFamily="@font/antic"
-                        android:includeFontPadding="false"
-                        android:text="Booking"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-                </RelativeLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/booking_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/booking_label"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/antic"
+                    android:includeFontPadding="false"
+                    android:text="Booking"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,6 +155,7 @@
             android:padding="20dp">
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -169,6 +170,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -183,6 +185,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -197,6 +200,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

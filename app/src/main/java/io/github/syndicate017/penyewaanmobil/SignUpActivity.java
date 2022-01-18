@@ -59,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                 UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
 
-                reference.child(fullName).setValue(helperClass);
+                reference.child(userName).setValue(helperClass);
 //
 //                Toast toast = Toast.makeText(SignUpActivity.this, "Your data was successfully created!", Toast.LENGTH_LONG);
 //                toast.show();
