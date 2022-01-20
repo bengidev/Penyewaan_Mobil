@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.syndicate017.penyewaanmobil">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,20 +17,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PenyewaanMobil">
         <activity
-            android:parentActivityName=".LoginActivity"
-            android:name=".UserProfileActivity"
+            android:name=".VerifyPhoneNumberActivity"
             android:exported="false" />
         <activity
-            android:parentActivityName=".LoginActivity"
+            android:name=".UserProfileActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity" />
+        <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".LoginActivity" />
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:noHistory="true"
-            android:exported="true">
+            android:exported="true"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

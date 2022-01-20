@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "588787119659",
+    "firebase_url": "https://penyewaan-mobil-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "penyewaan-mobil",
     "storage_bucket": "penyewaan-mobil.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "588787119659-skseq4ciakkbebvnb0k2njq3dst4g2nn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.github.syndicate017.penyewaanmobil",
+            "certificate_hash": "dd8957a49c66d867e549ebcd9ef7657175b09be9"
+          }
+        },
         {
           "client_id": "588787119659-dftgba53g7skdm1glaioisnd5gqa5cob.apps.googleusercontent.com",
           "client_type": 3

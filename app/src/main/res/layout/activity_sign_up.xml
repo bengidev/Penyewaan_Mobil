@@ -127,7 +127,9 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
         android:text="GO"
-        android:transitionName="login_button_transition" />
+        android:transitionName="login_button_transition"
+        app:icon="@drawable/ic_go"
+        app:iconGravity="textStart" />
 
     <Button
         android:id="@+id/reg_login_btn"

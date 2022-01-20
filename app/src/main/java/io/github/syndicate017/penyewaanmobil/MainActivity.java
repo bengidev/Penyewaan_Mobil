@@ -53,9 +53,6 @@ public class MainActivity extends AppCompatActivity {
         copyrightText.setAnimation(bottomAnim);
         logoAnimLottie.setAnimation(bottomAnim);
 
-        //Animations from lottie
-        logoAnimLottie = findViewById(R.id.logoAnimLottie);
-
         //For fix the animation from android version KitKat and Above
         logoAnimLottie.enableMergePathsForKitKatAndAbove(true);
         logoAnimLottie.animate().translationX(-4000).setDuration(500).setStartDelay(3000);

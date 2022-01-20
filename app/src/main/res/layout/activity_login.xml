@@ -93,7 +93,9 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/bungee"
             android:text="GO"
-            android:transitionName="login_button_transition" />
+            android:transitionName="login_button_transition"
+            app:icon="@drawable/ic_go"
+            app:iconGravity="textStart" />
 
         <Button
             android:id="@+id/signup_screen"

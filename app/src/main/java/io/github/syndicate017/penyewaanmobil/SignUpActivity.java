@@ -2,6 +2,7 @@ package io.github.syndicate017.penyewaanmobil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,8 @@ import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -18,9 +21,11 @@ public class SignUpActivity extends AppCompatActivity {
     TextInputLayout regFullName, regUserName, regEmail, regPhoneNumber, regPassword;
     Button regBtn, regToLoginBtn;
 
-    //Variables for FIreBase Database usage
+    //Variables for FireBase Database usage
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,15 +62,23 @@ public class SignUpActivity extends AppCompatActivity {
                 String phoneNumber = regPhoneNumber.getEditText().getText().toString();
                 String password = regPassword.getEditText().getText().toString();
 
-                UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
+                Intent intent = new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class);
+                intent.putExtra("phoneNumber", phoneNumber);
+                startActivity(intent);
 
-                reference.child(userName).setValue(helperClass);
+                //Storing data in firebase
+                //UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
+                //reference.child(userName).setValue(helperClass);
 //
 //                Toast toast = Toast.makeText(SignUpActivity.this, "Your data was successfully created!", Toast.LENGTH_LONG);
 //                toast.show();
+//
+//                Snackbar.make(view, "Your Account has been created successfully!", Snackbar.LENGTH_SHORT)
+//                        .setAction("Action", null).show();
 
-                Snackbar.make(view, "Your data was successfully created!", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
+//                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+//                startActivity(intent);
+//                finish();
             }
         }); //Register Button method end
     } //onCreate method end
