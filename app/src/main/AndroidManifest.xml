@@ -18,7 +18,8 @@
         android:theme="@style/Theme.PenyewaanMobil">
         <activity
             android:name=".VerifyPhoneNumberActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:noHistory="true" />
         <activity
             android:name=".UserProfileActivity"
             android:exported="false"

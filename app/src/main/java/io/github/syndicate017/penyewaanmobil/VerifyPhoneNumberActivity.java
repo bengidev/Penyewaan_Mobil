@@ -43,7 +43,11 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
         loadingVerifyLottie = findViewById(R.id.loadingVerifyLottie);
 
         //Get the phone number from the intent
+        String fullName = getIntent().getStringExtra("fullName");
+        String userName = getIntent().getStringExtra("userName");
+        String email = getIntent().getStringExtra("email");
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
+        String password = getIntent().getStringExtra("password");
 
         sendVerificationCodeToUser(phoneNumber);
 
@@ -111,6 +115,17 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                            String fullName = intent.getStringExtra("fullName");
+                            String userName = intent.getStringExtra("userName");
+                            String email = intent.getStringExtra("email");
+                            String phoneNumber = intent.getStringExtra("phoneNumber");
+                            String password = intent.getStringExtra("password");
+
+                            intent.putExtra("fullName", fullName);
+                            intent.putExtra("userName", userName);
+                            intent.putExtra("email", email);
+                            intent.putExtra("phoneNumber", phoneNumber);
+                            intent.putExtra("password", password);
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                         } else {

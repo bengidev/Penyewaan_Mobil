@@ -62,13 +62,19 @@ public class SignUpActivity extends AppCompatActivity {
                 String phoneNumber = regPhoneNumber.getEditText().getText().toString();
                 String password = regPassword.getEditText().getText().toString();
 
-                Intent intent = new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class);
-                intent.putExtra("phoneNumber", phoneNumber);
-                startActivity(intent);
 
                 //Storing data in firebase
-                //UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
-                //reference.child(userName).setValue(helperClass);
+                UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
+                reference.child(userName).setValue(helperClass);
+
+                Intent intent = new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class);
+                intent.putExtra("fullName", fullName);
+                intent.putExtra("userName", userName);
+                intent.putExtra("email", email);
+                intent.putExtra("phoneNumber", phoneNumber);
+                intent.putExtra("password", password);
+                startActivity(intent);
+
 //
 //                Toast toast = Toast.makeText(SignUpActivity.this, "Your data was successfully created!", Toast.LENGTH_LONG);
 //                toast.show();

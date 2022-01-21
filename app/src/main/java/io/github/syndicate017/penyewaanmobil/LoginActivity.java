@@ -112,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
                         username.setError(null);
                         username.setErrorEnabled(false);
 
-
                         String fullNameFromDB = snapshot.child(userEnteredUsername).child("fullName").getValue(String.class);
                         String userNameFromDB = snapshot.child(userEnteredUsername).child("userName").getValue(String.class);
                         String emailFromDB = snapshot.child(userEnteredUsername).child("email").getValue(String.class);
