@@ -108,7 +108,6 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
         String password = getIntent().getStringExtra("password");
 
-
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.signInWithCredential(credential)
