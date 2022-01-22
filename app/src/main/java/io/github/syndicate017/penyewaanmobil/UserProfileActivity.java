@@ -33,13 +33,11 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private void showAllUserData() {
         //Get the data from Intent which stored the data from LoginActivity
-        Intent intent = getIntent();
-
-        String user_fullName = intent.getStringExtra("fullName");
-        String user_userName = intent.getStringExtra("userName");
-        String user_email = intent.getStringExtra("email");
-        String user_phoneNumber = intent.getStringExtra("phoneNumber");
-        String user_password = intent.getStringExtra("password");
+        String user_fullName = getIntent().getStringExtra("fullName");
+        String user_userName = getIntent().getStringExtra("userName");
+        String user_email = getIntent().getStringExtra("email");
+        String user_phoneNumber = getIntent().getStringExtra("phoneNumber");
+        String user_password = getIntent().getStringExtra("password");
 
         //Set the data from Intent which stored the data from LoginActivity before
         fullNameLabel.setText(user_fullName);

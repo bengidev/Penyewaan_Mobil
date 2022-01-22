@@ -42,12 +42,7 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
         verify_btn = findViewById(R.id.verify_btn);
         loadingVerifyLottie = findViewById(R.id.loadingVerifyLottie);
 
-        //Get the phone number from the intent
-        String fullName = getIntent().getStringExtra("fullName");
-        String userName = getIntent().getStringExtra("userName");
-        String email = getIntent().getStringExtra("email");
         String phoneNumber = getIntent().getStringExtra("phoneNumber");
-        String password = getIntent().getStringExtra("password");
 
         sendVerificationCodeToUser(phoneNumber);
 
@@ -107,6 +102,13 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
     }
 
     private void signInTheUserByCredentials(PhoneAuthCredential credential) {
+        String fullName = getIntent().getStringExtra("fullName");
+        String userName = getIntent().getStringExtra("userName");
+        String email = getIntent().getStringExtra("email");
+        String phoneNumber = getIntent().getStringExtra("phoneNumber");
+        String password = getIntent().getStringExtra("password");
+
+
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
         firebaseAuth.signInWithCredential(credential)
@@ -115,12 +117,6 @@ public class VerifyPhoneNumberActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
-                            String fullName = intent.getStringExtra("fullName");
-                            String userName = intent.getStringExtra("userName");
-                            String email = intent.getStringExtra("email");
-                            String phoneNumber = intent.getStringExtra("phoneNumber");
-                            String password = intent.getStringExtra("password");
-
                             intent.putExtra("fullName", fullName);
                             intent.putExtra("userName", userName);
                             intent.putExtra("email", email);
