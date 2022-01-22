@@ -2,8 +2,11 @@ package io.github.syndicate017.penyewaanmobil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
 
-    FirebaseAuth auth;
+    private static final int SPLASH_SCREEN_TIME = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,40 +54,39 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                //Use the link on getInstance from FireBase Database
-                rootNode = FirebaseDatabase.getInstance("https://penyewaan-mobil-default-rtdb.asia-southeast1.firebasedatabase.app");
-                reference = rootNode.getReference("users");
+                //Show pop up message
+                Toast toast = Toast.makeText(getApplicationContext(), "Please input your OTP code to verify", Toast.LENGTH_SHORT);
+                toast.show();
 
-                //Get all the values
-                String fullName = regFullName.getEditText().getText().toString();
-                String userName = regUserName.getEditText().getText().toString();
-                String email = regEmail.getEditText().getText().toString();
-                String phoneNumber = regPhoneNumber.getEditText().getText().toString();
-                String password = regPassword.getEditText().getText().toString();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
+                        //Use the link on getInstance from FireBase Database
+                        rootNode = FirebaseDatabase.getInstance("https://penyewaan-mobil-default-rtdb.asia-southeast1.firebasedatabase.app");
+                        reference = rootNode.getReference("users");
 
-                //Storing data in firebase
-                UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
-                reference.child(userName).setValue(helperClass);
+                        //Get all the values
+                        String fullName = regFullName.getEditText().getText().toString();
+                        String userName = regUserName.getEditText().getText().toString();
+                        String email = regEmail.getEditText().getText().toString();
+                        String phoneNumber = regPhoneNumber.getEditText().getText().toString();
+                        String password = regPassword.getEditText().getText().toString();
 
-                Intent intent = new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class);
-                intent.putExtra("fullName", fullName);
-                intent.putExtra("userName", userName);
-                intent.putExtra("email", email);
-                intent.putExtra("phoneNumber", phoneNumber);
-                intent.putExtra("password", password);
-                startActivity(intent);
+                        //Storing data in firebase
+                        UserHelperClass helperClass = new UserHelperClass(fullName, userName, email, phoneNumber, password);
+                        reference.child(userName).setValue(helperClass);
 
-//
-//                Toast toast = Toast.makeText(SignUpActivity.this, "Your data was successfully created!", Toast.LENGTH_LONG);
-//                toast.show();
-//
-//                Snackbar.make(view, "Your Account has been created successfully!", Snackbar.LENGTH_SHORT)
-//                        .setAction("Action", null).show();
-
-//                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-//                startActivity(intent);
-//                finish();
+                        Intent intent = new Intent(getApplicationContext(), VerifyPhoneNumberActivity.class);
+                        intent.putExtra("fullName", fullName);
+                        intent.putExtra("userName", userName);
+                        intent.putExtra("email", email);
+                        intent.putExtra("phoneNumber", phoneNumber);
+                        intent.putExtra("password", password);
+                        startActivity(intent);
+                        finish();
+                    }
+                }, SPLASH_SCREEN_TIME);
             }
         }); //Register Button method end
     } //onCreate method end

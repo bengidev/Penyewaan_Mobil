@@ -126,7 +126,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bungee"
-        android:text="GO"
+        android:text="SIGN UP"
         android:transitionName="login_button_transition"
         app:icon="@drawable/ic_go"
         app:iconGravity="textStart" />
